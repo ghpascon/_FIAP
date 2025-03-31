@@ -1,0 +1,13 @@
+
+meu_investimento/
+│
+├── investimentos/
+│   ├── __init__.py
+│   └── investimentos.py
+│
+├── tests/
+│   └── test_investimentos.py
+│
+├── setup.py
+├── README.md
+└── LICENSE

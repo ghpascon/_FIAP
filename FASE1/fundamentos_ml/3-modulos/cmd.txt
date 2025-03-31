@@ -1,0 +1,9 @@
+./create_structure.sh ghp-investimentos
+
+entrar  no https://pypi.org/account/login/
+
+python setup.py sdist bdist_wheel
+twine upload dist/*
+
+https://pypi.org/project/cursofiap-ghp-package/1.0.0/ 
+https://pypi.org/project/GHPModuleInvest/0.1/
