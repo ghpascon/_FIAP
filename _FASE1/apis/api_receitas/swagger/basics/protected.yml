@@ -1,0 +1,26 @@
+tags:
+  - BASICS
+summary: Rota protegida que requer autenticação JWT.
+security:
+  - BearerAuth: []
+parameters:
+  - name: Authorization
+    in: header
+    required: true
+    type: string
+    description: "Token JWT no formato 'Bearer <seu_token>'"
+responses:
+  200:
+    description: Acesso concedido à rota protegida.
+    schema:
+      type: object
+      properties:
+        msg:
+          type: string
+  401:
+    description: Token JWT ausente ou inválido.
+    schema:
+      type: object
+      properties:
+        msg:
+          type: string

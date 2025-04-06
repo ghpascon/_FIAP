@@ -1,0 +1,26 @@
+tags:
+  - AUTH
+summary: Register a new user
+description: This endpoint registers a new user in the system.
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          description: The desired username.
+        password:
+          type: string
+          format: password
+          description: The desired password.
+responses:
+  201:
+    description: User created successfully
+  400:
+    description: User already exists

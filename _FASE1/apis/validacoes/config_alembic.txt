@@ -1,0 +1,14 @@
+alembic init alembic
+
+# em alembic/env.py
+target_metadata = None ->
+from main import db  
+target_metadata = db.metadata
+
+
+# em alembic.ini
+sqlalchemy.url = sqlite:///instance/meubanco.db
+
+# para migrar as alterações
+alembic revision --autogenerate -m "inicial"
+alembic upgrade head

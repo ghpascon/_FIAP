@@ -1,0 +1,23 @@
+# ESTRUTURA
+minha_lib/
+│── minha_lib/
+│   │── __init__.py
+│   │── modulo1.py
+│   │── modulo2.py
+│── tests/
+│   │── test_modulo1.py
+│   │── test_modulo2.py
+│── setup.py
+│── README.md
+│── requirements.txt
+│── .gitignore
+
+#RODAR O create_lib_structure.py
+#adicionar os modulos
+
+#na pasta da lib
+python setup.py sdist bdist_wheel
+
+twine upload dist/*
+
+https://pypi.org/project/ghp-utils-test/0.2/

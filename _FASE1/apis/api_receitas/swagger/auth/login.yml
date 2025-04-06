@@ -1,0 +1,29 @@
+tags:
+  - AUTH
+summary: Faz login do usuário e retorna um JWT.
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+responses:
+  200:
+    description: Login bem-sucedido, retorna JWT.
+    schema:
+      type: object
+      properties:
+        access_token:
+          type: string
+  401:
+    description: Credenciais inválidas
+    schema:
+      type: object
+      properties:
+        error:
+          type: string

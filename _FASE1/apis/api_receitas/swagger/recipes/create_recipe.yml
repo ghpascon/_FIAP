@@ -1,0 +1,28 @@
+tags:
+  - RECIPES
+summary: Cria uma nova receita.
+security:
+  - BearerAuth: []
+parameters:
+  - name: Authorization
+    in: header
+    required: true
+    type: string
+    description: "Token JWT no formato Bearer <TOKEN>"
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        title:
+          type: string
+        ingredients:
+          type: string
+        time_minutes:
+          type: integer
+responses:
+  201:
+    description: Receita criada com sucesso
+  401:
+    description: Token não fornecido ou inválido

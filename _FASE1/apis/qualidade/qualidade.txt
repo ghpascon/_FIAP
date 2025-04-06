@@ -1,0 +1,5 @@
+# formatar o codigo
+black scrypt.py
+
+#verifica possiveis erros
+flake8 scrypt.py

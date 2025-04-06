@@ -1,0 +1,40 @@
+tags:
+  - RECIPES
+summary: Atualiza uma receita existente.
+security:
+  - BearerAuth: []
+parameters:
+  - name: Authorization
+    in: header
+    required: true
+    type: string
+    description: "Token JWT no formato Bearer <TOKEN>"
+  - name: recipe_id
+    in: path
+    required: true
+    type: integer
+    description: ID da receita a ser atualizada
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        title:
+          type: string
+        ingredients:
+          type: string
+        time_minutes:
+          type: integer
+responses:
+  200:
+    description: Receita atualizada
+  404:
+    description: Receita não encontrada
+  401:
+    description: Token não fornecido ou inválido
+    schema:
+      type: object
+      properties:
+        msg:
+          type: string

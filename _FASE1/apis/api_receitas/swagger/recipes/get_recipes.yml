@@ -1,0 +1,42 @@
+tags:
+  - RECIPES
+summary: Lista receitas com filtros opcionais.
+security:
+  - BearerAuth: []
+parameters:
+  - name: Authorization
+    in: header
+    required: true
+    type: string
+    description: "Token JWT no formato Bearer <TOKEN>"
+  - name: ingredient
+    in: query
+    type: string
+    required: false
+    description: Filtra por ingrediente
+  - name: max_time
+    in: query
+    type: integer
+    required: false
+    description: Tempo máximo de preparo (minutos)
+responses:
+  200:
+    description: Lista de receitas filtradas
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+          title:
+            type: string
+          time_minutes:
+            type: integer
+  401:
+    description: Token JWT ausente ou inválido
+    schema:
+      type: object
+      properties:
+        msg:
+          type: string
